@@ -1,0 +1,6 @@
+algorithm = 'DEMO', indicator = 'hyp', folder = '1-separable_3-ill-conditioned', coco_version = '1.1.1.137'
+% DEMO: differential evolution for multiobjective optimization as submitted by Tusar and Filipic for BBOB 2016; p100ln_cr9_NS - reference values current data (reconstructed)
+function =  14, dim =  5, bbob-biobj_f14_d05_hyp.dat, 1:500000|3.0e-004, 2:500000|5.6e-004, 3:500000|4.6e-004, 4:500000|2.4e-003, 5:500000|1.9e-004, 6:500000|2.8e-004, 7:500000|1.7e-002, 8:500000|5.0e-003, 9:500000|5.1e-004, 10:500000|3.0e-004
+function =  6, dim =  5, bbob-biobj_f06_d05_hyp.dat, 1:500000|4.0e-004, 2:500000|4.1e-004, 3:500000|3.7e-004, 4:500000|2.2e-004, 5:500000|2.7e-004, 6:500000|4.4e-004, 7:500000|3.8e-004, 8:500000|2.3e-004, 9:500000|3.3e-004, 10:500000|3.0e-004
+function =  15, dim =  5, bbob-biobj_f15_d05_hyp.dat, 1:500000|1.9e-004, 2:500000|1.0e-004, 3:500000|8.7e-005, 4:500000|3.3e-004, 5:500000|3.4e-004, 6:500000|1.5e-004, 7:500000|3.3e-004, 8:500000|1.3e-004, 9:500000|2.5e-004, 10:500000|1.2e-004
+function =  5, dim =  5, bbob-biobj_f05_d05_hyp.dat, 1:500000|1.1e-003, 2:500000|5.9e-004, 3:500000|5.9e-004, 4:500000|1.1e-003, 5:500000|8.2e-004, 6:500000|1.3e-003, 7:500000|1.2e-003, 8:500000|1.4e-003, 9:500000|3.0e-003, 10:500000|2.7e-003

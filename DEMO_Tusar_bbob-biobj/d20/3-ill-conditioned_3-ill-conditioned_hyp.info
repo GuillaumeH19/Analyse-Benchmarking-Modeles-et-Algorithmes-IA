@@ -1,0 +1,5 @@
+algorithm = 'DEMO', indicator = 'hyp', folder = '3-ill-conditioned_3-ill-conditioned', coco_version = '1.1.1.137'
+% DEMO: differential evolution for multiobjective optimization as submitted by Tusar and Filipic for BBOB 2016; p100ln_cr9_NS - reference values current data (reconstructed)
+function =  41, dim =  20, bbob-biobj_f41_d20_hyp.dat, 1:2000011|9.0e-004, 2:2000011|6.5e-004, 3:2000011|1.5e-003, 4:2000011|2.0e-003, 5:2000011|1.9e-003, 6:2000011|1.0e-003, 7:2000011|1.8e-003, 8:2000011|1.1e-003, 9:2000011|6.9e-004, 10:2000011|7.0e-004
+function =  35, dim =  20, bbob-biobj_f35_d20_hyp.dat, 1:2000011|3.7e-003, 2:2000011|4.0e-003, 3:2000011|6.7e-003, 4:2000011|4.5e-003, 5:2000011|3.5e-003, 6:2000011|4.1e-003, 7:2000011|3.7e-003, 8:2000011|4.9e-003, 9:2000011|4.1e-003, 10:2000011|4.7e-003
+function =  36, dim =  20, bbob-biobj_f36_d20_hyp.dat, 1:2000011|4.5e-003, 2:2000011|4.1e-003, 3:2000011|3.0e-003, 4:2000011|5.3e-003, 5:2000011|2.0e-003, 6:2000011|1.1e-002, 7:2000011|8.4e-003, 8:2000011|3.5e-003, 9:2000011|3.1e-003, 10:2000011|3.6e-003

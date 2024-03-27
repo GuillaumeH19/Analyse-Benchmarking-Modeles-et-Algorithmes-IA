@@ -1,0 +1,6 @@
+algorithm = 'MAT-SMS', indicator = 'hyp', folder = '2-moderate_3-ill-conditioned', coco_version = '1.1.1.137'
+% MAT-SMS: MATSuMoTo library extension to multiobjective optimization with SMS-EMOA as solver as submitted by Al-Dujaili and Suresh for BBOB 2016 - reference values current data (reconstructed)
+function =  22, dim =  5, bbob-biobj_f22_d05_hyp.dat, 1:375|1.6e+000, 2:370|5.4e+000, 3:375|6.9e+000, 4:366|3.2e+000, 5:375|4.9e+000, 6:375|5.6e+000, 7:375|4.1e+001, 8:375|4.1e+000, 9:375|4.9e+000, 10:375|1.5e+001
+function =  29, dim =  5, bbob-biobj_f29_d05_hyp.dat, 1:375|2.2e+001, 2:375|1.1e+001, 3:375|3.5e+000, 4:375|2.4e+001, 5:375|5.0e+001, 6:375|9.6e+000, 7:375|3.6e+001, 8:375|1.9e+000, 9:375|1.5e+001, 10:375|7.5e+000
+function =  30, dim =  5, bbob-biobj_f30_d05_hyp.dat, 1:375|6.9e+001, 2:375|4.3e+000, 3:375|4.5e+002, 4:375|4.3e+001, 5:365|2.0e+002, 6:375|8.6e+001, 7:368|1.3e+002, 8:375|1.0e+002, 9:375|2.9e+002, 10:375|5.9e+002
+function =  23, dim =  5, bbob-biobj_f23_d05_hyp.dat, 1:375|7.2e+000, 2:363|1.1e+001, 3:375|2.6e+001, 4:375|1.8e+001, 5:375|2.3e+001, 6:375|5.8e+001, 7:375|1.8e+001, 8:375|4.2e+001, 9:366|1.7e+001, 10:366|7.8e+001
