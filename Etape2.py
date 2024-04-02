@@ -22,7 +22,7 @@ df_instance_3 = df3[df3['instance'] == 1]
 plt.figure(figsize=(10, 6))
 plt.plot(df_instance_1['function evaluation'], df_instance_1['indicator value'], marker='o', linestyle='',markersize=5,label=f'f01', color='red')
 plt.plot(df_instance_2['function evaluation'], df_instance_2['indicator value'], marker='o', linestyle='',markersize=5, label=f'f02', color='blue')
-plt.plot(df_instance_3['function evaluation'], df_instance_3['indicator value'], marker='o', linestyle='',markersize=5, label=f'f11', color='purple')
+plt.plot(df_instance_3['function evaluation'], df_instance_3['indicator value'], marker='o', linestyle='',markersize=5, label=f'f11', color='green')
 plt.title('Graphe de l\'instance 1')
 plt.xlabel('Function Evaluation')
 plt.ylabel('Indicator Value')
@@ -46,7 +46,7 @@ for instance in instances:
     df_instance3 = df3[df3['instance'] == instance]
     plt.plot(df_instance['function evaluation'], df_instance['indicator value'], marker='o', linestyle='',markersize=3, label=label_prob1,color='red')
     plt.plot(df_instance2['function evaluation'], df_instance2['indicator value'], marker='o', linestyle='',markersize=3, label=label_prob2,color='blue')
-    plt.plot(df_instance3['function evaluation'], df_instance3['indicator value'], marker='o', linestyle='',markersize=3, label=label_prob3,color='purple')
+    plt.plot(df_instance3['function evaluation'], df_instance3['indicator value'], marker='o', linestyle='',markersize=3, label=label_prob3,color='green')
     label_prob1 = ''
     label_prob2 = ''
     label_prob3 = ''
@@ -59,14 +59,17 @@ plt.yscale('log')
 plt.legend()
 plt.show()
 
-df_aggregated = df.groupby('function evaluation')['indicator value'].agg([ 'median']).reset_index()
-df_aggregated2 = df2.groupby('function evaluation')['indicator value'].agg([ 'median']).reset_index()
-df_aggregated3 = df3.groupby('function evaluation')['indicator value'].agg([ 'median']).reset_index()
+df_aggregated = df.groupby('function evaluation')['indicator value'].agg([ 'median', 'min', 'max']).reset_index()
+df_aggregated2 = df2.groupby('function evaluation')['indicator value'].agg([ 'median', 'min', 'max']).reset_index()
+df_aggregated3 = df3.groupby('function evaluation')['indicator value'].agg([ 'median', 'min', 'max']).reset_index()
 
 plt.figure(figsize=(10, 6))
 plt.plot(df_aggregated['function evaluation'], df_aggregated['median'], label='f01', color='red')
+plt.fill_between(df_aggregated['function evaluation'], df_aggregated['min'], df_aggregated['max'], alpha=0.5, color='red', label='Min-Max Range')
 plt.plot(df_aggregated2['function evaluation'], df_aggregated2['median'], label='f02', color='blue')
-plt.plot(df_aggregated3['function evaluation'], df_aggregated3['median'], label='f11', color='purple')
+plt.fill_between(df_aggregated2['function evaluation'], df_aggregated2['min'], df_aggregated2['max'], alpha=0.5, color='blue', label='Min-Max Range')
+plt.plot(df_aggregated3['function evaluation'], df_aggregated3['median'], label='f11', color='green')
+plt.fill_between(df_aggregated3['function evaluation'], df_aggregated3['min'], df_aggregated3['max'], alpha=0.5, color='green', label='Min-Max Range')
 plt.title('Graphe agrégé de toutes les instances')
 plt.xlabel('Function Evaluation')
 plt.ylabel('Indicator Value')
