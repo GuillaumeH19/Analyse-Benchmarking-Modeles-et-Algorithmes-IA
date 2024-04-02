@@ -1,8 +1,29 @@
 from matplotlib import pyplot as plt
 import pandas as pd
-from OuvrirFichier import ouvrirfichier
 
-chemin_fichier = "MAT-SMS_Al-Dujaili_bbob-biobj/d05/1-separable_1-separable/bbob-biobj_f01_d05_hyp.tdat"
+def ouvrirfichier(chemin_fichier):
+    with open(chemin_fichier, 'r') as file:
+        lines = file.readlines()
+
+    data = []
+    current_instance = None
+
+    # Parcourir chaque ligne du fichier
+    for line in lines:
+        # Ignorer les lignes de commentaire commençant par '%'
+        if line.startswith('%'):
+            if 'instance' in line:
+                current_instance = int(line.split(',')[0].split('=')[1].strip())
+        else:
+            values = line.strip().split('\t')
+            values.append(current_instance)
+            data.append(values)
+    df = pd.DataFrame(data, columns=['function evaluation', 'indicator value', 'instance'])
+    df['function evaluation'] = df['function evaluation'].astype(float)
+    df['indicator value'] = df['indicator value'].astype(float)
+    return df
+
+chemin_fichier = "MAT-SMS/bbob-biobj_f01_d05_hyp.tdat"
 df = ouvrirfichier(chemin_fichier)
 print(df)
 
@@ -13,8 +34,7 @@ plt.plot(df_instance_1['function evaluation'], df_instance_1['indicator value'],
 plt.title('Graphe de l\'instance 1')
 plt.xlabel('Function Evaluation')
 plt.ylabel('Indicator Value')
-plt.xscale('log')
-plt.yscale('log')
+plt.grid(True)
 plt.show()
 
 # Obtenir la liste des instances uniques
@@ -24,12 +44,11 @@ instances = df['instance'].unique()
 plt.figure(figsize=(10, 6))
 for instance in instances:
     df_instance = df[df['instance'] == instance]
-    plt.plot(df_instance['function evaluation'], df_instance['indicator value'], marker='o', linestyle='',markersize=5, label=f'Instance {instance}')
-plt.title('Graphe de toutes les instances')
+    plt.plot(df_instance['function evaluation'], df_instance['indicator value'], marker='o', linestyle='-',markersize=5, label=f'Instance {instance}')
+plt.title('Graphe de toutes les instances (échelle logarithmique)')
 plt.xlabel('Function Evaluation')
 plt.ylabel('Indicator Value')
-plt.xscale('log')
-plt.yscale('log')
+plt.grid(True)
 plt.legend()
 plt.show()
 
@@ -43,8 +62,7 @@ plt.fill_between(df_aggregated['function evaluation'], df_aggregated['min'], df_
 plt.title('Graphe agrégé de toutes les instances')
 plt.xlabel('Function Evaluation')
 plt.ylabel('Indicator Value')
-plt.xscale('log')
-plt.yscale('log')
+plt.grid(True)
 plt.legend()
 plt.show()
 

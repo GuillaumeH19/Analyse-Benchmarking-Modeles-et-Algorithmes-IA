@@ -2,13 +2,13 @@ from matplotlib import pyplot as plt
 import pandas as pd
 from OuvrirFichier import ouvrirfichier
 
-chemin_fichier = "MAT-SMS_Al-Dujaili_bbob-biobj/d05/2-moderate_2-moderate/bbob-biobj_f20_d05_hyp.tdat"
+chemin_fichier = "MAT-SMS_Al-Dujaili_bbob-biobj/d05/1-separable_1-separable/bbob-biobj_f01_d05_hyp.tdat"
 df = ouvrirfichier(chemin_fichier)
 
-chemin_fichier = "DEMO_Tusar_bbob-biobj/d05/2-moderate_2-moderate/bbob-biobj_f20_d05_hyp.tdat"
+chemin_fichier = "DEMO_Tusar_bbob-biobj/d05/1-separable_1-separable/bbob-biobj_f02_d05_hyp.tdat"
 df2 = ouvrirfichier(chemin_fichier)
 
-chemin_fichier = "RANDOMSEARCH-5_Auger_bbob-biobj/d05/2-moderate_2-moderate/bbob-biobj_f20_d05_hyp.tdat"
+chemin_fichier = "RANDOMSEARCH-5_Auger_bbob-biobj/d05/1-separable_1-separable/bbob-biobj_f02_d05_hyp.tdat"
 df3 = ouvrirfichier(chemin_fichier)
 
 print(df)

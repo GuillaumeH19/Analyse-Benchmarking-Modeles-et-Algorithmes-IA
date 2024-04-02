@@ -2,13 +2,13 @@ from matplotlib import pyplot as plt
 import pandas as pd
 from OuvrirFichier import ouvrirfichier
 
-chemin_fichier = "MAT-SMS_Al-Dujaili_bbob-biobj/d05/1-separable_1-separable/bbob-biobj_f01_d05_hyp.tdat"
+chemin_fichier = "MAT-SMS_Al-Dujaili_bbob-biobj/d05/1-separable_2-moderate/bbob-biobj_f03_d05_hyp.tdat"
 df = ouvrirfichier(chemin_fichier)
 
-chemin_fichier = "MAT-SMS_Al-Dujaili_bbob-biobj/d05/1-separable_1-separable/bbob-biobj_f02_d05_hyp.tdat"
+chemin_fichier = "DEMO_Tusar_bbob-biobj/d05/1-separable_2-moderate/bbob-biobj_f03_d05_hyp.tdat"
 df2 = ouvrirfichier(chemin_fichier)
 
-chemin_fichier = "MAT-SMS_Al-Dujaili_bbob-biobj/d05/1-separable_1-separable/bbob-biobj_f11_d05_hyp.tdat"
+chemin_fichier = "RANDOMSEARCH-5_Auger_bbob-biobj/d05/1-separable_2-moderate/bbob-biobj_f03_d05_hyp.tdat"
 df3 = ouvrirfichier(chemin_fichier)
 
 print(df)
@@ -20,9 +20,9 @@ df_instance_2 = df2[df2['instance'] == 1]
 df_instance_3 = df3[df3['instance'] == 1]
 
 plt.figure(figsize=(10, 6))
-plt.plot(df_instance_1['function evaluation'], df_instance_1['indicator value'], marker='o', linestyle='',markersize=5,label=f'f01', color='red')
-plt.plot(df_instance_2['function evaluation'], df_instance_2['indicator value'], marker='o', linestyle='',markersize=5, label=f'f02', color='blue')
-plt.plot(df_instance_3['function evaluation'], df_instance_3['indicator value'], marker='o', linestyle='',markersize=5, label=f'f11', color='purple')
+plt.plot(df_instance_1['function evaluation'], df_instance_1['indicator value'], marker='o', linestyle='',markersize=5,label=f'MAT-SMS', color='red')
+plt.plot(df_instance_2['function evaluation'], df_instance_2['indicator value'], marker='o', linestyle='',markersize=5, label=f'DEMO', color='blue')
+plt.plot(df_instance_3['function evaluation'], df_instance_3['indicator value'], marker='o', linestyle='',markersize=5, label=f'RANDOMSEARCH-5', color='purple')
 plt.title('Graphe de l\'instance 1')
 plt.xlabel('Function Evaluation')
 plt.ylabel('Indicator Value')
@@ -35,9 +35,9 @@ instances = df['instance'].unique()
 instances2 = df2['instance'].unique()
 instances3 = df3['instance'].unique()
 
-label_prob1 = 'f01'
-label_prob2 = 'f02'
-label_prob3 = 'f11'
+label_prob1 = 'MAT-SMS'
+label_prob2 = 'DEMO'
+label_prob3 = 'RANDOMSEARCH-5'
 
 plt.figure(figsize=(10, 6))
 for instance in instances:
@@ -64,9 +64,9 @@ df_aggregated2 = df2.groupby('function evaluation')['indicator value'].agg([ 'me
 df_aggregated3 = df3.groupby('function evaluation')['indicator value'].agg([ 'median']).reset_index()
 
 plt.figure(figsize=(10, 6))
-plt.plot(df_aggregated['function evaluation'], df_aggregated['median'], label='f01', color='red')
-plt.plot(df_aggregated2['function evaluation'], df_aggregated2['median'], label='f02', color='blue')
-plt.plot(df_aggregated3['function evaluation'], df_aggregated3['median'], label='f11', color='purple')
+plt.plot(df_aggregated['function evaluation'], df_aggregated['median'], label='MAT-SMS', color='red')
+plt.plot(df_aggregated2['function evaluation'], df_aggregated2['median'], label='DEMO', color='blue')
+plt.plot(df_aggregated3['function evaluation'], df_aggregated3['median'], label='RANDOMSEARCH-5', color='purple')
 plt.title('Graphe agrégé de toutes les instances')
 plt.xlabel('Function Evaluation')
 plt.ylabel('Indicator Value')
