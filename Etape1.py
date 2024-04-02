@@ -22,6 +22,7 @@ instances = df['instance'].unique()
 
 # Tracer le graphe en utilisant une échelle logarithmique
 plt.figure(figsize=(10, 6))
+instances = df['instance'].unique()
 for instance in instances:
     df_instance = df[df['instance'] == instance]
     plt.plot(df_instance['function evaluation'], df_instance['indicator value'], marker='o', linestyle='',markersize=5, label=f'Instance {instance}')
