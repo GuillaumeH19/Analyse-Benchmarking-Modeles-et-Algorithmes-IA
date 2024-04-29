@@ -15,6 +15,7 @@ plt.xlabel('Function Evaluation')
 plt.ylabel('Indicator Value')
 plt.xscale('log')
 plt.yscale('log')
+plt.savefig('Graphes/Etape1/graphe_instance_1.png')
 plt.show()
 
 # Obtenir la liste des instances uniques
@@ -32,6 +33,7 @@ plt.ylabel('Indicator Value')
 plt.xscale('log')
 plt.yscale('log')
 plt.legend()
+plt.savefig('Graphes/Etape1/graphe_instance_all.png')
 plt.show()
 
 # Agréger les données pour toutes les instances
@@ -47,6 +49,7 @@ plt.ylabel('Indicator Value')
 plt.xscale('log')
 plt.yscale('log')
 plt.legend()
+plt.savefig('Graphes/Etape1/graphe_instance_agregated.png')
 plt.show()
 
 
